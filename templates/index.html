@@ -1,0 +1,318 @@
+{% extends 'basic.html' %}
+{% block css %}
+body{
+      color: rgb(247, 16, 85)!important;
+      width: 100%;
+      height: 100%;
+
+}
+
+h3{
+  font-size: 25px;
+  margin-top: 1%;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: black;
+    border-radius: 21px;
+    transform: rotate(30deg);
+}
+.product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #b4b2b9;
+}
+
+
+.position-relative {
+    position: relative!important;
+    color: white;
+}
+
+.overflow-hidden {
+    overflow: hidden!important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgb(247, 16, 85)!important;
+   }
+
+.text-center {
+    text-align: center!important;
+}
+
+.p-3 {
+    padding: 1rem!important;
+}
+
+.page-footer{
+  background-color: green;
+}
+.footer-copyright{
+  background-color:  darkgreen;
+}
+
+
+.neon-button{
+margin-left: 75%;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: white;
+border: r#fafafa 0.125em solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+background: red;
+position: relative;
+font-size: 25px
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;;
+
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #16ecbe;
+opacity: 0;
+background-color: #16ecbe;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+background: green ;
+color:white;
+text-shadow: none;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+opacity: 1;
+}
+
+.heading {
+  font-size: 25px;
+  margin-left: 2%;
+  color: blue;
+  margin-right: 25px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.rt{
+  margin-left: 30px;
+  color: indigo;
+}
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+.row{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
+
+{% endblock %}
+{% block body %}
+<header>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 fw-normal">Welcome</h1>
+          <p class="lead fw-normal">Gone with the Wind. "After all, tomorrow is another day."</p>
+          <a class="btn btn-success" href="/app/contact/">Contact</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+    </header>
+
+<img onload="window.uet &amp;&amp; uet.call &amp;&amp; uet(&quot;af&quot;);" src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Books/082020/Bookbazaar/1500-X-300-BB-August-2021-Header.jpg" alt="Book Bazaar">
+<div class="main">
+   <i> <h3>′Classic′ – a book which people praise and don’t read.</h3>
+    <h3>Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.</h3>
+      <h3>Many people, myself among them, feel better at the mere sight of a book.</h3>
+
+    <h3>The library is inhabited by spirits that come out of the pages at night.</h3>
+<h3>If you don’t like to read, you haven’t found the right book.</h3>
+<h3>One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.</h3>  
+<h3>It is is better to know one book intimately than a hundred superficially.</h3>
+<h3>Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.</h3>
+<h3>Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.</h3>
+<h3>A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.</h3>
+<h3>A great book should leave you with many experiences, and slightly exhausted at the end. You live several lives while reading.</h3>
+<h3>If you would tell me the heart of a man, tell me not what he reads, but what he rereads.</h3>
+<h3>Sometimes, you read a book and it fills you with this weird evangelical zeal, and you become convinced that the shattered world will never be put back together unless and until all living humans read the book.</h3>
+</i>
+<br>
+<br>
+<div class="neon">
+<a class="neon-button" href="app/buy/">Buy Now</a>
+<br>
+<span class="heading">User Rating:</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p class="rt">4.5 average based on 2054 reviews.</p>
+<hr class="new1" style=" border-top: 1px solid rgb(25, 0, 255);">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+</div>
+</div>
+<br>
+<footer class="page-footer font-small teal pt-4">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9 mb-4">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H15uuDMqDK0"  allowfullscreen></iframe>
+          </div>
+  </div>
+    </div>
+      </div>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://google.com/"> Books.com</a>
+    </div>
+
+{% endblock %}

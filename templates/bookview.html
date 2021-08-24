@@ -1,0 +1,236 @@
+{% extends 'basic.html' %}
+
+{% block title%} {{book.book_name}} - My Book Store{% endblock %}
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+
+{% block css %}
+
+body{
+   margin-left: 0%
+}
+p{
+  font-size: 20px;
+}
+
+.page-footer{
+  background-color: green;
+}
+.footer-copyright{
+  background-color:  darkgreen;
+}
+.row .btn{
+margin-top: 8%;
+height: 80%;
+width: 40%;
+margin-left: 5%;
+
+}
+
+.stars{
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+h5{
+  font-size: 20px;
+color: Green;
+}
+
+.star{
+margin-left: 1%;
+  list-style: none;
+  font-size: 2rem;
+  padding-left: 20px;
+  color:  red;
+}
+
+.output{
+   font-size: 25px;
+   margin-left: 24%;
+   color: red;
+}
+
+.orange{
+  color: orange;
+}
+
+.yellow{
+  color: yellow;
+}
+
+h4, h6{
+  color: red;
+}
+
+.a-row{
+  background: radial-gradient(#0A99AF,#057586);
+  text-align: center;
+  color: white;
+  font-size: 33px;
+}
+
+{% endblock %}
+
+
+{% block body %}
+<br>
+<div class="a-row zg-banner zg-text-center-align">
+
+  <div class="a-row a-spacing-top-small">
+    <span class="zg-banner-text">
+    Bestsellers<br>
+    </span>
+    <span class="zg-banner-subtext">
+      <i>Our most popular products based on sales.  Updated hourly.</i>
+    </span>
+  </div>
+</div>
+<br><br>
+<div class="container my-3 mx-5" style="font-family: Sans-sherif; margin-right: 5%;">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+        <div class="img-magnifier-container">
+         <a href="/app/{{book.image}}" class="fancybox" data-fancybox="gallary1"><img src="/app/{{book.image}}" width="320px" height="385px">
+         </a></div>
+    </div>
+        <div class="row">
+            <button class="btn btn-primary mx-3">Buy Now</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div>
+        <div class="col-md-8">
+        <h2>{{book.book_name}} (Paperback)</h2>
+            <h5>{{book.subcategory}}</h5>
+        <h3><b>Rs.{{book.price}} </b></h3>
+        <br>
+        <h4>Discount: 50% </h4>
+        <h6>Harry Up!!  Stock is limited. </h6>
+        <br>
+           <b><h4  style="color: black;">Description: </h4></b>
+        <p style="font-size: 17px;">{{book.desc}}</p>
+        <br>
+<div class="star-rating">
+  <ul class="stars">
+    <h5>Review</h5>
+    <li class="star"> <i class="fa fa-star"></i> </li>
+    <li class="star"> <i class="fa fa-star"></i> </li>
+    <li class="star"> <i class="fa fa-star"></i> </li>
+    <li class="star"> <i class="fa fa-star"></i> </li>
+    <li class="star"> <i class="fa fa-star"></i> </li>
+  </ul>
+    <p class="output">Ratings</p>
+  
+  
+</div>
+    </div>
+    
+    </div>
+</div>
+<br>
+<br>
+
+
+
+
+<footer class="page-footer font-small teal pt-4">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9 mb-4">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H15uuDMqDK0"  allowfullscreen></iframe>
+          </div>
+  </div>
+    </div>
+      </div>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://google.com/"> Books.com</a>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script>
+// // star rating
+
+const stars = document.querySelectorAll('.star');
+const output = document.querySelector('.output');
+
+for(x=0; x<stars.length; x++){
+  stars[x].starValue =(x+1);
+// stars[x].addEventListener('click', function(){
+
+['click', 'mouseover','mouseout'].forEach(function(e){
+  stars[x].addEventListener(e, showRating);
+})
+
+}
+
+function showRating(e){
+
+  let type = e.type;
+  let starValue = this.starValue;
+
+if(type == 'click'){
+  if (starValue>1){
+    output.innerHTML = "You rated this " +starValue+"stars";
+  }
+}
+
+  stars. forEach(function(elem,ind){
+     if(type === 'click'){
+       if (ind< starValue){
+         elem.classList.add("orange");
+       }
+       else{
+         elem.classList.remove("orange");
+       }
+     }
+  })
+}
+
+
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+localStorage.clear();
+//document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+
+
+
+</script>
+{% endblock %}
