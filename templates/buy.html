@@ -211,7 +211,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 <div class="container my-3 mx-5.5">
     {% for book, range, nSlides in allbooks %}
-    <h5 class="my-3 mx-2">Flash Sale On {{book.0.category}} - Recommended Items</h5>
+    <h5 class="my-3 mx-2">Flash Sale On {{book.0.category}} </h5>
     <div class="row">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
             <ul class="carousel-indicators">
@@ -303,7 +303,6 @@ $('.divpr').on('click', 'button.cart', function() {
 //Add Popover to cart
 $('#popcart').popover();
 updatePopover(cart);
-
 function updatePopover(cart) {
     var popStr = "";
     popStr = popStr + "<h5>Cart of Your Books </h5><div class='mx-2 my-2'>";
