@@ -80,15 +80,34 @@
 <br><br>
 
 <footer class="page-footer font-small teal pt-4">
+   <footer class="page-footer font-small cyan darken-3">
     <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9 mb-4">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H15uuDMqDK0"  allowfullscreen></iframe>
+      <div class="row">
+        <div class="col-md-12 py-5">
+          <div class="mb-5 flex-center">
+            <a href="https://twitter.com">
+              <i ><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" style="width: 4%; margin-top: 1%; margin-left: 26%;"> </i>
+    </a>
+            <a href="https://instagram.com">
+              <i> <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png" style="width: 4%; margin-top: 1%; margin-left: 3%;"></i>
+            </a>
+            <a href="https://github.com">
+                <i> <img src="https://user-images.githubusercontent.com/6385983/34427109-5772d042-ec0c-11e7-896d-7e9096b92856.png" style="width: 4%; margin-top: 1%; margin-left: 3%; border-radius: 8px; border-top:  1px;"></i>
+              </a>
+              <a href="https://youtube.com">
+              <i ><img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-png-picture-13.png" style="width: 6%; margin-top: 1%; margin-left: 2%"> </i>
+            </a>
+            <a href="https://facebook.com">
+              <i ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg-JpfC4gKgHEHQeUuv4LrEpy5In1LnWkwgwMTxE_SIGHeG4EaPw4juf0w6nn5SDQj5mw&usqp=CAU" style="width: 4%; margin-top: 1%; margin-left: 2%; border-radius: 8px;"> </i>
+            </a>
+            <a href="https://google.com">
+              <i ><img src="https://ipullrank.com/wp-content/uploads/2020/07/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png" style="width: 4%; margin-top: 1%; margin-left: 2%; border-radius: 50%"> </i>
+            </a>
           </div>
-  </div>
-    </div>
+        </div>
       </div>
+    </div>
+
     <div class="footer-copyright text-center py-3">© 2021 Copyright:
       <a href="https://google.com/"> Books.com</a>
     </div>
@@ -109,11 +128,11 @@ if ($.isEmptyObject(cart)){
     $('#items').append(mystr);
 }else{
     for (item in cart) {
-         
+
          let name = cart[item][1];
          let quantity = cart[item][0];
          let price = cart[item][2];
-        
+
         sum = sum + quantity;
         totalprice = totalprice + quantity * price
         mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -135,7 +154,7 @@ alert('Thanks for ordering with us. Your order is {{id}}. Use it to track your o
 localStorage.clear();
 document.location = "/app";
 {% endif %}
-$('#amount')=val($('#totlprice').html());
+$('#amount')=val($('#totalprice').html());
 
 
 

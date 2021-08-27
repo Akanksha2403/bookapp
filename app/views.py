@@ -29,7 +29,21 @@ def buy(request):
 
 def bookview(request,myid):
     book = Books.objects.filter(id=myid)
-    return render(request, "bookview.html",{'book': book[0]})
+    books = Books.objects.all()
+    n = len(books)
+    nslides = n // 4 + ceil((n / 4) - (n // 4))
+
+    allbooks = []
+    catbooks = Books.objects.values('category', 'id')
+    cats = {item['category'] for item in catbooks}
+    for cat in cats:
+        prod = Books.objects.filter(category=cat)
+        n = len(prod)
+        nslides = n // 4 + ceil((n / 4) - (n // 4))
+        allbooks.append([prod, range(1, nslides), nslides])
+    params = {'book': book[0], 'allbooks': allbooks}
+
+    return render(request, "bookview.html",params)
 
 
 def search(request):
