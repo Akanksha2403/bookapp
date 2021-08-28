@@ -81,9 +81,9 @@ margin-left:-4px;
 background-color: blue;
 }
 .col-md-3 img{
-width: 220px;
+width: 240px;
 margin-top: 3%;
-height: 260px;
+height: 320px;
 }
 body .carousel-indicator li{
 background-color: blue;
@@ -137,12 +137,12 @@ padding-right: 0;
          <a href="/app/{{book.image}}" class="fancybox" data-fancybox="gallary1"><img src="/app/{{book.image}}" width="320px" height="385px">
          </a></div>
     </div>
-        <div class="row">
+        <!-- <div class="row">
             <button class="btn btn-primary mx-3" style="margin-top: 8%;height: 80%;width: 40%; margin-left: 5%;
 ">Buy Now</button>
             <button class="btn btn-primary"  style="margin-top: 8%;height: 80%;width: 40%; margin-left: 5%;
 ">Add To Cart</button>
-        </div>
+        </div> -->
     </div>
         <div class="col-md-8">
         <h2 style="font-weight: 900">{{book.book_name}} (Paperback)</h2>
@@ -187,7 +187,7 @@ padding-right: 0;
                 <div class="carousel-item active">
                     {% for i in booked %}
                     <div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="card align-items-center" style="width: 18rem;">
+                        <div class="card align-items-center" style="width: 17rem;">
                             <img src='/app/{{i.image}}' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" id="namepr{{i.id}}">{{i.book_name|slice:"0:20"}}...</h5>

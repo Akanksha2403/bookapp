@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css'>
-
+    <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,23 +16,28 @@
 <title>{% block title%} {% endblock %}</title>
      <style>
      body{
-    font-family: 'Baloo Bhai', cursive;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: pink;
     }
 
-    .page-footer{
-          background-color: black;
-          color: white;
-    }
+    
 
     .navbar {
-      background-color: rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
       font-size: 17px;
+      color: black;
     }
 
     .navbar-brand{
       font-size: 29px;
+      color: black;
     }
+
+.nav-item .nav-link{
+  color: black;
+}
+
+
     .row{
        color: rgb(0, 0, 0);
     }
@@ -41,6 +46,7 @@
      background: linear-gradient(45deg, rgb(240, 245, 239) ,rgb(12, 129, 12),,rgb(23, 155, 23));
     color: white;
     border-color: #ffc107;
+    
 }
 .btn-danger{
      background: linear-gradient(45deg, rgb(235, 235, 231),red,red, rgb(241, 0, 0), red);
@@ -70,24 +76,24 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="/">Home</a>
+  <a class="navbar-brand" href="/" style="color: rgb(0, 13, 128); font-family: 'Allison', cursive;  font-size: 50px;  font-weight: 800; margin-top: -1%; margin-bottom: -1%;" >BookHub</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/app/buy/">Books <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link" href="/app/buy/" style="color: rgb(1, 24, 231); font-size: 20px; margin-left: 19px; font-weight: 800;">Books </a>
       </li>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/app/about/">About Us</a>
+        <a class="nav-link" href="/app/about/" style="color: rgb(48, 80, 223); font-weight: 500;">About Us</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/app/contact/">Contact Us</a>
+        <a class="nav-link" href="/app/contact/" style="color: rgb(79, 77, 211); font-weight: 500;">Contact Us</a>
       </li>
 
     </ul>
